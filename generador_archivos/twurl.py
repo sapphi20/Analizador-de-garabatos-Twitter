@@ -26,6 +26,6 @@ def get_last_n_tweets_from(n, user) :
     print headers
     return data
 	
-file = open("200_tweets.json", "w")
-file.write(get_last_n_tweets_from(200, 'TomimiDraws'))
+file = open("../data/200_tweets_gabo.json", "w")
+file.write(get_last_n_tweets_from(200, 'gaboflowers'))
 file.close()
