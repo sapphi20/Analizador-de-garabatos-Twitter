@@ -1,0 +1,15 @@
+Datos Interesantes:
+Respuesta:
+entities -> user_mentions (menciones a usuario)
+source (si vino desde web, android, aplicacion externa, etc.)
+in_reply_to_screen_name (en respuesta al usuario)
+user (TODA la info del usuario)
+	profile_image_url
+	profile_banner_url
+	
+Retweet
+text (lo marca como RT)
+retweeted_status (tiene la info del tweet original)
+
+Quotes
+is_quote_status (bool que dice si corresponde a un tweet citado o no)
