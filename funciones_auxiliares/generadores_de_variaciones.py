@@ -1,7 +1,7 @@
 def mas_s(pal):
-	if pal[len(pal) - 1] != 's':
-		return pal + 's'
-	return pal
+	if pal[len(pal) - 1] in ['a','e','o']:
+		return True
+	return False
 
 def chxx(pal):
 	
@@ -23,7 +23,7 @@ def chxx(pal):
 	
 	return aux
 
-def reducir_silabas(pal)
+def reducir_silabas(pal):
 	splited = pal.split("a")
 	new_pal = splited[0]
 	for frag in splited[1:]:

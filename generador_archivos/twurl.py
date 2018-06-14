@@ -17,11 +17,19 @@ def get_last_n_tweets_from(n, user) :
     print '* Calling Twitter...'
     url = augment('https://api.twitter.com/1.1/statuses/user_timeline.json',
         {'screen_name': user, 'count': str(n)} )
-    print url + '\n'
     connection = urllib.urlopen(url)
     data = connection.read()
 	
-    print data + '\n'
     headers = connection.info().dict
-    print headers
     return data
+	
+def get_user(user):
+	print '* Calling Twitter...'
+	url = augment('https://api.twitter.com/1.1/users/show.json', {'screen_name': user})
+	connection = urllib.urlopen(url)
+	data = connection.read()
+	
+	headers = connection.info().dict
+	return data
+	
+print(get_user("sapphi20"))
