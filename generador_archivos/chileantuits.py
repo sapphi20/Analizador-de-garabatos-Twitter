@@ -13,7 +13,7 @@ auth.set_access_token(token_key, token_secret)
 
 api = tweepy.API(auth)
 
-tuitsFile = open('chileantuits.tsv', 'a')
+tuitsFile = open('../data/chileantuits.tsv', 'a')
 csvWriter = csv.writer(tuitsFile, delimiter='\t')
 
 
