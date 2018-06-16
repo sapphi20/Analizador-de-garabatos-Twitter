@@ -31,8 +31,10 @@ def writeTuit(tuit):
 class MyStreamListener(tweepy.StreamListener):
 
     def on_status(self, status):
-        if(status.place.country == "Chile"):
-            writeTuit(status)
+        if(status.place is not None):
+            if(status.place.country == "Chile"):
+                writeTuit(status)
+        else: print(str(status.id) + "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
     def on_error(self, status_code):
         tuitsFile.close()
