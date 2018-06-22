@@ -1,6 +1,7 @@
 import tweepy
 import hidden
 import csv
+import time
 
 secrets = hidden.oauth()
 consumer_key = secrets['consumer_key']
@@ -40,6 +41,25 @@ class MyStreamListener(tweepy.StreamListener):
         tuitsFile.close()
         print(str(status_code))
 
-myStreamListener = MyStreamListener()
-myStream = tweepy.Stream(auth = api.auth, listener=myStreamListener)
-myStream.filter(locations=[-109.4791708,-56.5573577,-66.15203,-17.497384])
+errorCounter = 0
+connectionReply = 0
+#connectionUp = True
+while(True):
+    try:
+        myStreamListener = MyStreamListener()
+        myStream = tweepy.Stream(auth = api.auth, listener=myStreamListener)
+        myStream.filter(locations=[-109.4791708,-56.5573577,-66.15203,-17.497384])
+        errorCounter+=1
+        connectionReply = 0
+    except KeyboardInterrupt:
+        print("Shao ql loh vimo")
+        break
+    except:
+        connectionReply+=1
+        print(str(connectionReply) + "intento de conexión")
+        if(conectionReply > 2):
+            # connectionUp = False
+            print("Excedido tiempo de conexión")
+            break
+        time.sleep(60)
+        
