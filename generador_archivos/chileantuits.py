@@ -57,7 +57,7 @@ while(True):
     except:
         connectionReply+=1
         print(str(connectionReply) + "intento de conexión")
-        if(conectionReply > 2):
+        if(connectionReply > 2):
             # connectionUp = False
             print("Excedido tiempo de conexión")
             break
