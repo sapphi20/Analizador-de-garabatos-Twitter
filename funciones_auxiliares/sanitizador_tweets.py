@@ -1,7 +1,7 @@
 
 def save_saniticed_tweets(filename):
-	file = open(filename + '.tsv', 'r')
-	filesan = open('san_' + filename + '.tsv', 'w')
+	file = open('../data/tweets/' + filename + '.tsv', 'r')
+	filesan = open('../data/saniticed_tweets/san_' + filename + '.tsv', 'w')
 
 	current_line = file.readline()
 
@@ -26,8 +26,8 @@ def save_saniticed_tweets(filename):
 	filesan.close()
 	
 def get_users(filename):
-	file = open('san_' + filename + '.tsv', 'r')
-	fileus = open('users_' + filename + '.tsv', 'w')
+	file = open('../data/saniticed_tweets/san_' + filename + '.tsv', 'r')
+	fileus = open('../data/users/users_' + filename + '.tsv', 'w')
 
 	current_line = file.readline()
 	dict = {}
