@@ -15,7 +15,7 @@ def divide_file_in_size(file_name, batch_size):
 		new_file.close()
 		i += 1
 		
-file_names = ['../data/saniticed_tweets/san_argentineantuits.tsv','../data/saniticed_tweets/san_chileantuits.tsv','../data/saniticed_tweets/san_peruviantuits.tsv']
+file_names = ['../data/saniticed_tweets/san_peruviantuits_by_user.tsv']
 
 for name in file_names:
 	divide_file_in_size(name, 200000)
