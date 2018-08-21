@@ -1,6 +1,5 @@
 current_gram = 4
 
-
 nombre_archivo_chile = "../data/chile/" + str(current_gram) + "gram/part-r-00000"
 nombre_archivo_argentina = "../data/argentina/" + str(current_gram) + "gram/part-r-00000"
 nombre_archivo_peru = "../data/peru/" + str(current_gram) + "gram/part-r-00000"
@@ -21,28 +20,42 @@ file_inter.close()
 current_line = file_argentina.readline()
 while current_line != "":
 	splited_line = current_line.split("\t")
-	if not (splited_line[0] in lineas_inter):
-		out_chile.write(current_line)
-		
+	bool = False
+	for linea in lineas_inter:
+		if linea.replace("\n","") == splited_line[0].replace("\n",""):
+			bool = True
+	
+	if not bool:
+		out_argentina.write(current_line)
+	
 	current_line = file_argentina.readline()
 
 current_line = file_chile.readline()
 while current_line != "":
 	splited_line = current_line.split("\t")
-	if not (splited_line[0] in lineas_inter):
-		out_argentina.write(current_line)
-		
+	bool = False
+	for linea in lineas_inter:
+		if linea.replace("\n","") == splited_line[0].replace("\n",""):
+			bool = True
+	
+	if not bool:
+		out_chile.write(current_line)
+	
 	current_line = file_chile.readline()
 
 current_line = file_peru.readline()
 while current_line != "":
 	splited_line = current_line.split("\t")
-	if not (splited_line[0] in lineas_inter):
+	bool = False
+	for linea in lineas_inter:
+		if linea.replace("\n","") == splited_line[0].replace("\n",""):
+			bool = True
+	
+	if not bool:
 		out_peru.write(current_line)
-		
+	
 	current_line = file_peru.readline()
 
-	
 
 file_chile.close()
 file_argentina.close()

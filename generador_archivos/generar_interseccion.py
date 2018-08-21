@@ -28,7 +28,7 @@ for i in range(len(lineas_peru)):
 	
 for linea in lineas_argentina:
 	if (linea in lineas_chile) and (linea in lineas_peru):
-		file_inter.write(linea)
+		file_inter.write(linea + "\n")
 
 file_chile.close()
 file_argentina.close()
