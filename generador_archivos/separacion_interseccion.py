@@ -1,16 +1,19 @@
-nombre_archivo_chile = ""
-nombre_archivo_argentina = ""
-nombre_archivo_peru = ""
-nombre_archivo_inter = ""
+current_gram = 4
 
-file_chile = open(nombre_archivo_chile + ".tsv", "r")
-file_argentina = open(nombre_archivo_argentina + ".tsv", "r")
-file_peru = open(nombre_archivo_peru + ".tsv", "r")
-file_inter = open(nombre_archivo_inter + ".tsv", "r")
 
-out_chile = open("out_chile.tsv", "w")
-out_argentina = open("out_argentina.tsv", "w")
-out_peru = open("out_peru.tsv", "w")
+nombre_archivo_chile = "../data/chile/" + str(current_gram) + "gram/part-r-00000"
+nombre_archivo_argentina = "../data/argentina/" + str(current_gram) + "gram/part-r-00000"
+nombre_archivo_peru = "../data/peru/" + str(current_gram) + "gram/part-r-00000"
+nombre_archivo_inter = "../data/intersecciones/interseccion_" + str(current_gram) + "gram.tsv"
+
+file_chile = open(nombre_archivo_chile, "r")
+file_argentina = open(nombre_archivo_argentina, "r")
+file_peru = open(nombre_archivo_peru, "r")
+file_inter = open(nombre_archivo_inter, "r")
+
+out_chile = open("out_chile_" + str(current_gram) + "gram.tsv", "w")
+out_argentina = open("out_argentina_" + str(current_gram) + "gram.tsv", "w")
+out_peru = open("out_peru_" + str(current_gram) + "gram.tsv", "w")
 
 lineas_inter = file_inter.readlines()
 file_inter.close()

@@ -1,12 +1,14 @@
-nombre_archivo_chile = ""
-nombre_archivo_argentina = ""
-nombre_archivo_peru = ""
-nombre_archivo_inter = ""
+current_gram = 4
 
-file_chile = open(nombre_archivo_chile + ".tsv", "r")
-file_argentina = open(nombre_archivo_argentina + ".tsv", "r")
-file_peru = open(nombre_archivo_peru + ".tsv", "r")
-file_inter = open(nombre_archivo_inter + ".tsv", "w")
+nombre_archivo_chile = "../data/chile/" + str(current_gram) + "gram/part-r-00000"
+nombre_archivo_argentina = "../data/argentina/" + str(current_gram) + "gram/part-r-00000"
+nombre_archivo_peru = "../data/peru/" + str(current_gram) + "gram/part-r-00000"
+nombre_archivo_inter = "interseccion_" + str(current_gram) + "gram.tsv"
+
+file_chile = open(nombre_archivo_chile, "r")
+file_argentina = open(nombre_archivo_argentina, "r")
+file_peru = open(nombre_archivo_peru, "r")
+file_inter = open(nombre_archivo_inter, "w")
 
 
 lineas_inter = []
@@ -26,7 +28,7 @@ for i in range(len(lineas_peru)):
 	
 for linea in lineas_argentina:
 	if (linea in lineas_chile) and (linea in lineas_peru):
-	file_inter.write(linea)
+		file_inter.write(linea)
 
 file_chile.close()
 file_argentina.close()
